@@ -1,0 +1,90 @@
+###邮掌柜pad版
+http://wiki.uletm.com/pages/viewpage.action?pageId=29508261
+http://vps.beta.ule.com/vpsShopSaleService/jxc/searchSaleOrderSummaryCountForPad!searchSaleOrderSummaryCountForPad.do?usrOnlyId=10000000391&jsonpCallback=jsonp
+UI控件地址
+
+https://mobile.ant.design/docs/react/introduce
+https://ant.design/docs/react/introduce
+
+
+U:\UED\DRM\UI_review\邮乐2017\邮乐购\邮掌柜pad端\邮掌柜PAD端交付件WD20170807
+"returnCode": "0000",//成功标记，失败为9999
+"sumProfit": "0.00",//盈利额
+"returnPrice": "0.00",
+"sumTotalPrice": "4.80",//销售额
+"saleNum": "1"//订单数
+
+https://github.com/react-component/calendar
+
+http://intljusticemission.github.io/react-big-calendar/examples/index.html
+
+
+
+
+
+开始时间有 选择结束时间   min  就是开始时间    max 就是开始时间后推30
+
+结束时间有 选择开始时间   max  就是结束时间    min 就是开始时间前推30
+
+/data/wwwroot/app/yzg/pad/web
+
+/data/webroot/app/yzg/pad/web
+
+www.beta.ule.com/app/yzg/pad/web/index.html
+
+http://vps.beta.ule.com/vpsItemService/itemService/pad/itemList?usrOnlyid=&villageNo=9999999901&pageNum=1&pageSize=10&usrOnlyId=10000000391&jsonpCallback=jsonp_1504412292948_30295
+
+http://vps.beta.ule.com/vpsItemService/itemService/pad/itemList?usrOnlyid=10000000391&pageNum=1&pageSize=10&villageNo=9999999901
+
+
+
+http://wwayne.com/react-tooltip/
+
+https://github.com/reactjs-ui/reactjs-pull-refresh
+
+
+
+开始时间
+结束时间
+
+当前时间
+前一个选择时间
+
+SalesStream 销售流水
+Commodity 商品管理
+Yzg.exec(‘方法名’，（data）=>{
+    返回 data.data
+
+})
+//同步信息
+Yzg.exec("syncItemByUpc",{upc:'a'},(data)=>{
+	alert(data)
+})
+	params.usrOnlyId = local.get("usrOnlyId") || 10000000391
+	params.villageNo= local.get("villageNo")||9999999901
+
+
+	支付类型 只要0是现金支付其他都是扫码支付  主要看商品列表的PAY_TYPE
+
+
+	// 1006395014
+// ceshi888
+
+
+10000000391
+9999999901
+退货接口
+http://wiki.uletm.com/pages/viewpage.action?pageId=30335564
+saleType
+0商品销售
+1 积分兑换 
+ 2 赊账  没有单价
+3 还款    没有单价
+4会员价销售
+5 零头减免    没有单价
+6 邮政积分抵扣   没有单价
+7 商品退货
+8扫码转账
+9惠民e取
+2是新散货 1是老散货 退货都不可修改数量 0是包装可以修改
+debtPrice  可抵扣金额

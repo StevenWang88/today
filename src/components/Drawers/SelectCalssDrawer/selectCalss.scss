@@ -1,0 +1,15 @@
+.select-drawer{
+    .head-group{
+        margin: 20px  0;
+    }
+    .checked{
+        span{
+            color:red;
+        }
+    }
+    .chassifyBox{
+        height:calc(100% - 200px);
+        overflow: scroll;
+        position: relative;
+    }
+}

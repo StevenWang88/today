@@ -1,0 +1,223 @@
+@import "../../scss/color";
+@import "../../scss/func";
+@import "../../scss/size";
+.order-page{
+	//左侧
+	.left-layout{
+		.title{
+			line-height: 64px;
+			text-align: center;
+			color: #202020;
+			font-weight: bold;
+			position: relative;
+			font-size: 20px;
+			.back-icon{
+				@include absolute(left,bottom);
+				height: 100%;
+				padding-left: 10px;
+				display: flex;
+				align-items: center;
+			}
+		}
+		.search-box{
+			height: 65px;
+			border-bottom: 1px solid #c3c3c3;
+			border-top: 1px solid #c3c3c3;
+			display: flex;
+			.input-box{
+				position: relative;
+				height: 100%;
+				flex: 1;
+				padding: 10px 0;
+			}
+			.clear-input{
+				display: none;
+			}
+			.search-icon{
+				width: 40px;
+				padding-right: 5px;
+				height: 100%;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+			.search-term{
+				width: 64px;
+				border-left: 1px solid #c3c3c3;
+				@include flex-center();
+			}
+		}
+		.search-box.focus{
+			.clear-input{display: flex;}
+			.search-term{display: none;}
+		}
+		.left-slide{
+			height: calc(100% - 168px);
+			.rc-load-more:after{
+				background-size:0.7rem,0.7rem;
+			}
+			.order-list-warp{
+				position: relative;
+				height: 100%;
+				overflow-y: auto;
+				ul{
+					padding: 0 20px;
+					font-size: 14px;
+					.time{line-height: 40px;font-size: 12px;}
+					.time-order-item{padding: 5px 0;border-bottom: 1px solid #e3e3e3}
+					.order-item-body{
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						height: 64px;
+						color: #999;
+						p{
+							height: 32px;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							padding: 0 10px;
+						}
+						.order-time{
+							font-size: 16px;
+						}
+						.order-code{
+							font-size: 12px;
+						}
+
+						.time-order-status{
+							padding: 0 3px;
+							color: $fb3;
+							height: 28px;
+							line-height: 28px;
+							border: 1px solid $fb3;
+							border-radius: 2px;
+						}
+						.order-id{
+							@include over-hide(1);
+							flex: 1;
+							word-break: break-all;
+						}
+						strong{color: #202020;}
+					}
+					.cur{
+						.order-item-body{
+							background: #f5f5f5;
+						}
+					}
+				}
+			}
+			.not-order-list{
+				// height: 100%;
+				display: flex;
+				color: #c4c4c3;
+				align-items: center;
+				font-size: 14px;
+				&>div{width: 100%;text-align: center;}
+			}
+		}
+	}
+	//右侧
+	.right-layout{
+		&>div{
+			width: 100%;
+			height: 100%;
+		}
+		//右侧信息为空时候的状态
+		.empty-box{
+			display: flex;
+			align-items: center;
+			&>div{
+				display: flex;
+				width: 100%;
+				align-items: center;
+				flex-direction: column;
+			}
+			.empt-pic{
+				width: 160px;
+				height: 170px;
+			}
+			.empt-pic-1{
+				background-image: url("../../assets/wuchaxunjieguo.png");
+			}
+			.empt-pic-2{
+				background-image: url("../../assets/wudingdan.png");
+			}
+			p{
+				padding-top: 30px;
+				line-height: 18px;
+				color: #999;
+			}
+		}
+		
+		//订单信息
+	
+		.order-info-warp{
+			padding: 0 20px;
+			&>div{
+				width: 100%;
+			}
+			h2{
+				line-height: 64px;
+				text-align: center;
+			}
+			//订单支付信息
+			.order-des{
+				margin-bottom: 20px;
+				.row{
+					.row-sub{
+						display: flex;
+						flex: 1;
+						height: 100%;
+						padding: 0 20px;
+						align-items: center;
+						justify-content: space-between;
+						span{
+							&:first-child{color: $bb;}
+						}
+					}
+					.line{
+						height: 32px;
+						background: $e3;
+						width: 1px;
+					}
+				}
+			}
+			.list{
+				max-height: 350px;
+			}
+			.return-button{
+				height: 65px;
+				width: calc(100% - 290px);
+				@include flex-center();
+				margin-bottom: 16px;
+				position: absolute;
+				bottom: 0px;
+				z-index: 97;
+				font-size: 20px;
+				font-weight: bold;
+				.left-button{
+					height: 65px;
+					flex: 1;
+					background: #fb3030;
+					@include flex-center();
+					align-self: flex-start;
+					margin-right: 20px;
+					border: 1px solid transparent;
+					border-radius: 8px;
+					color: #fff;
+				}
+				.right-button{
+					height: 65px;
+					flex: 1;
+					color: #f5f5f5;
+					background: #FB3030;
+					@include flex-center();
+					align-self: flex-end;
+					border: 1px solid transparent;
+					border-radius: 8px;
+				}
+			}
+		}
+	}
+}

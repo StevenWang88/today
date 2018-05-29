@@ -1,0 +1,100 @@
+.ule-icon{
+    background-image: url("../assets/small2.png");
+    background-size: 200px 200px;
+    display: inline-block;
+}
+//眼
+.eye-icon-1{
+    background-position: 0 0;
+}
+.eye-icon-2{
+    background-position: -24px 0;
+}
+
+//搜索图标
+.search-icon{
+    width: 26px;height: 26px;
+    background-position: 0 -18px;
+}
+
+//销售统计图标
+.sale-tj-icon{
+    width: 24px;
+    height: 22px;
+    background-position: -27px -18px;
+}
+
+//输入框清zhi
+.clean-icon{
+    width: 18px;
+    height: 18px;
+    background-position: right top;
+}
+
+//赛选按钮
+.term-icon{
+    width: 20px;
+    height: 20px;
+    background-position: right -23px;
+}
+.term-icon2{
+    width: 20px;
+    height: 20px;
+    background: url("../assets/saixuan2.png") no-repeat;
+    background-size: contain;
+}
+
+//扫码按钮
+.scan-icon{
+    width: 32px;
+    height: 32px;
+    background-position: left bottom;
+}
+
+//商品管理筛选图标
+.icon-sxred{
+    width: 16px;
+    height: 16px;
+    background-position: -57px top;
+}
+//商品管理 新增分类和商品
+.icon-add{
+    width: 18px;
+    height: 18px;
+    background-position: -85px -45px;
+}
+//商品管理返回按钮left-back
+.icon-left{
+    width: 18px;
+    height: 25px;
+    background-position: left -45px;
+}
+//商品管理按钮右边
+.icon-right{
+    width: 10px;
+    height: 18px;
+    background-position: -128px -45px;
+}
+//商品管理选择保质期 向下
+.icon-down{
+    width: 20px;
+    height: 12px;
+    background-position: -104px -45px;
+}
+//商品管理选择保质期 向上
+.icon-up{
+    width: 20px;
+    height: 12px;
+    background-position: -104px -45px;
+    transform: rotate(-180deg);
+}
+// 箭头动画过渡
+.icon-run{
+    transition: all 0.3s;
+}
+//商品管理分类选中状态 checked
+.icon-checked{
+    width: 25px;
+    height: 16px;
+    background-position: -140px -45px;
+}

@@ -1,0 +1,329 @@
+@import "../../scss/func";
+@import "../../scss/color";
+
+/*初始样式*/
+.right-drawer-root{
+    @include absolute();
+    width:100%;
+    height:100%;
+    display:block;
+    overflow: hidden;
+    z-index: 100;
+    .right-drawer-mask{
+        background:#888;
+        opacity: 0.5;
+        @include absolute();
+        width:100%;
+        height:100%;
+    }
+
+    .right-drawer-box{
+        @include absolute(right,top,0,0);
+        transform: translate(0,0);
+        height: 100%;
+        width:calc(100% - 250px);
+        box-shadow: -2px 0 4px rgba(0,0,0,.1);
+        &>div{
+            height: 100%;
+            width:100%;
+        }
+    }
+}
+
+.right-drawer-root-enter{
+    .right-drawer-mask{
+        opacity: 0;
+    }
+
+    .right-drawer-box{
+        transform:translate(100%,0);
+    }
+}
+
+.right-drawer-root-enter-active{
+    .right-drawer-mask{
+        transition:opacity 0.2s;
+         opacity: 0.5;
+    }
+    .right-drawer-box{
+        transition:transform 0.2s;
+        transform:translate(0,0);
+    }
+}
+
+
+.right-drawer-root-leave-active{
+    .right-drawer-mask{
+        transition:opacity 0.2s;
+         opacity: 0;
+    }
+    .right-drawer-box{
+        transition:transform 0.2s;
+        transform:translate(100%,0);
+    }
+}
+
+//右侧box的样式
+.right-drawer-box{
+    &>div{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    h2.title{
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        position: relative;
+        font-size: 16px;
+        font-weight: bold;
+        .close{
+            height: 100%;
+            width: 28px;
+            font-size: 28px;
+            color: #d7d7d7;
+            @include flex-center();
+            @include absolute(left,top);
+        }
+        .head-right{
+            @include absolute(right,top);
+            @include flex-center();
+            font-size: 16px;
+            height: 64px;
+            line-height: 64px;
+            .read-code{
+                @include flex-center();
+                height:32px;
+                vertical-align: middle;
+                padding: 9px 5px;
+                background-color: #FFE2E2;
+                border-radius: 4px;
+                width: 150px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    //筛选
+    .filter-drawer{
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        background: $fff;
+        position: relative;
+        .btn-title{
+            line-height: 44px;
+            color: $c99;
+        }
+        .line-time{
+            width: 8px;
+            height: 1px;
+            background: #c3c3c3;
+        }
+        .ule-btn-group{
+            align-items: center;
+        }
+        .footer{
+            @include absolute(left,bottom,0,20px);
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+    
+    
+    //选择时间
+    .choose-time-drawer{
+        background: $fff;
+        padding: 0 20px;
+        .time-warp{
+            padding-top: 10px;
+            height: calc(100% - 128px - 20px);
+            
+            .tab-head{
+                height: 44px;
+                border: 1px solid #292c3f;
+                border-radius: 4px;
+                @include flex-center();
+                .tab-head-item{
+                    flex: 1;
+                    text-align: center;
+                    line-height: 44px;
+                }
+                .cur{
+                    background: #292c3f;
+                    color: $fff;
+                }
+            }
+            
+            .tab-body{
+                height: 100%;
+                .tab-body-item{
+                    height: calc(100% - 44px);
+                    &:last-child{
+                        padding-top: 64px;
+                    }
+                    display: none;
+                }
+                .tab-body-item.cur{
+                    display: block;
+                }
+            }
+        }
+        .ule-btn-sure{
+            letter-spacing: 4px;
+        }
+    }
+    
+    //开始时间结束时间选择
+    .select-time-drawer{
+        .time-warp{
+            padding-top: 0;
+        }
+    }
+    //时间选择  开始时间结束时间
+    .cell{
+        border-top: 1px solid #c3c3c3;
+        color: $c99;
+        .cell-line{
+            border-bottom: 1px solid #c3c3c3;
+            height: 64px;
+            @include flex-center();
+            justify-content: space-between;
+        }
+        .cell-tips{line-height: 64px;text-align: center;color: $c99;}
+    }
+    //时间容器
+    .time-container{
+        header{
+            height: 64px;
+            @include flex-center();
+            .anticon{color: #c3c3c3;}
+            .w40{width: 40px;}
+            .time-text{
+                font-weight: bold;
+                padding: 0 30px;
+            }
+        }
+        .week-rect{
+            height: 31px;
+            display: flex;
+            color: $c99;
+            font-size: 14px;
+            border-bottom: 1px solid #c3c3c3;
+            li{
+                flex: 1;
+                @include flex-center();
+            }
+        }
+        .day-rect{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            li{
+                margin-bottom: 10px;
+                height: 50px;
+                width: 14.2857%;
+                @include flex-center();
+                .day-item{
+                    @include flex-center();
+                    width: 50px;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .active{
+                color: #fff;
+                .day-item{
+                    background: #fb3030;
+                }
+            }
+            .disabled{
+                color: #999999;
+                background: #fff;
+            }
+            .prev-cur-day{
+                .day-item{
+                    background: #ffe2e2;
+                }
+            }
+            border-bottom: 1px solid #c3c3c3;
+        }
+    }
+    //新加分类名称 修改分类名称
+    .add-class-layout{
+        height: calc(100% - 64px);
+        @include flex-center(column);
+        justify-content: space-between;
+        padding: 20px 0 20px 0;
+    }
+    //
+    .good-drawer{
+        background: #f5f5f5 !important;
+        padding: 0 20px;
+        overflow: hidden;
+        h2.title{
+            font-size: 20px;
+        }
+        .good-content{
+            margin: 20px 0;
+        }
+        .good-list{
+            width: 100%;
+            input{
+                border: none;
+                height: 100%;
+                width: calc(100% - 100px);
+                &::-webkit-input-placeholder{
+                    color: $bb;
+                }
+            }
+            .good-item{
+                background: #fff;
+                height: 64px;
+                border-bottom: 1px solid #e3e3e3;
+                padding: 0 20px;
+                border-radius: 4px;
+                width: 100%;
+                &:last-child{border-bottom: none;}
+            }
+        }
+        .good-head{
+            width: calc(100% - 190px);
+        }
+        .footer{
+            // position: absolute;
+            position: fixed;
+            width: calc(100% - 20px);
+            bottom: 20px;
+            color: #fff;
+        }
+        .addGood_box{
+            max-height: calc(100% - 64px);
+            overflow: scroll !important;
+            padding-bottom: 84px;
+        }
+    }
+    .stock-drawer{
+        .good-list{
+            margin-top: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            .good-item{
+                border-radius: 0;
+                input{
+                    width: auto;
+                    flex-grow: 2;
+                    padding-left: 10px;
+                }
+            }
+        }
+        .tip{
+            margin: 15px auto;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}

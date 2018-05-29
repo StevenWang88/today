@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<g>
+			<rect width="100" height="100"></rect>
+			<text x="0" y="15" fill="red">A LINK</text>
+		</g>
+	</svg>
+</head>
+<body>
+
+<script>
+	class Event {
+		constructor(name){
+			this.handlers = [];
+			this.name = name;
+		}
+		addHandler(fn){
+			this.handlers.push(fn);
+		}
+		
+		removeHander(handler){
+			for( let i = 0 ; i < this.handlers.length ; i++ ){
+				if(handler === this.handlers[i]){
+					this.handlers.splice(i,1);
+					break;
+				}
+			}
+		}
+		fire(data){
+			this.handlers.forEach(fn=>fn(data));
+		}
+	}
+	
+	class EventCreators{
+		constructor(){
+			this.events = [];
+		}
+		
+		getEvent(name){
+			return this.events.filter(item=>(item.name === name));
+		}
+		
+		on(name,data){
+			var event = this.getEvent(eventName);
+			if (!event) {
+				event = new Event(name);
+				this.events.push(event);
+			}
+			event.fire(data);
+		}
+		
+		emit(name,handle){
+			var event = getEvent(eventName);
+			if (!event) {
+				event = new Event(eventName);
+				this.events.push(event);
+			}
+			event.addHandler(handle);
+			return ()=>{
+				event.removeHander(handle);
+			}
+		}
+	}
+	
+</script>
+
+</body>
+</html>

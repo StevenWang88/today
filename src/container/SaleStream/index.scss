@@ -1,0 +1,118 @@
+@import "../../scss/color.scss";
+@import "../../scss/func.scss";
+@import "../../scss/size";
+.sale-statistics-page{
+    height: 100%;
+    //下拉刷新组件的高
+    .rc-scroll{
+        height: 100%;
+    }
+    //头部
+    .top-module{
+        background: $fb3;
+        padding: 0 20px;
+        color: $fff;
+        .top-bottom,.top{
+            height: $h64;
+        }
+        .top-sub{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $fff;
+        }
+        .top{
+            .eye{width: 24px;height: 12px;}
+            .eye-icon-2{height: 14px;}
+            .title{font-size: 20px;}
+            .ule-eye{
+                height: 56px;
+                padding-left: 50px;
+            }
+        }
+        .top-middle{
+            &>div{
+                flex: 1;
+                height: 100%;
+                @include flex-center(column);
+            }
+            height: 172px;
+            .value{
+                font-size: 50px;
+                font-weight: bold;
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+        .top-bottom{
+            font-size: $s12;
+            &>div{ width: 160px;@include flex-center(row);margin: 0 auto;height: 100%;}
+            .sub-item{
+                @include flex-center(column);
+                height: 100%;
+                flex: 1;
+                color: #f29898;
+                .des{line-height: 30px;}
+                .line{background: #f29898;width: 44px;height: 4px;border-radius: 5px}
+            }
+            .sub-item.cur{
+                color: $fff;
+                .line{background: $fff}
+            }
+        }
+    }
+
+    //中间两个操作栏
+    .cz-column{
+        height: 64px;
+        display: flex;
+        @include flex-center();
+        .cz-sub{
+            flex: 1;@include flex-center();
+            strong{margin-left: 14px;}
+            a{display: inline-block;display: flex;color: #333;}
+        }
+    }
+
+    //d3 折线图
+    .d3line-module{
+        position: relative;
+        height: calc(100% - 364px);
+        background: $f5;
+        #lineCharts{
+            width: 100%;height: 100%;
+            .axis path,
+            .axis line {
+                stroke: #000;
+                fill: none;
+            }
+            .inner_line path,
+
+            .inner_line line {
+
+                fill: none;
+
+                stroke:#E7E7E7;
+
+                shape-rendering: crispEdges;
+
+            }
+        }
+        .change-d3{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 150px;
+            text-align: center;
+        }
+        .d3-tooltip-rect{
+            transition: all 0.2s;
+        }
+        .d3-tooltip-text{
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+    }
+    .asdsad{width: 80%;}
+}

@@ -1,0 +1,53 @@
+@import "../../../scss/color";
+.time-drawer{
+    .filter-warp{
+        width: 100%;
+        max-height: calc(100% - 64px);
+        overflow: scroll;
+    }
+    .btn-title{
+        margin-top: 10px;
+    }
+   .ule-btn-group-2{
+       justify-content: space-between;
+      .ule-btn{
+        flex: none;
+        width: calc(33% - 10px);
+        input{
+            border: none;
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+            border-radius: 4px;
+        }
+        span{
+            margin-right: 20px;
+        }
+    }
+    .ule-btn-default{
+        color: $c20;
+        border: 1px solid #d3d3d3;
+    }
+    .ule-btn.cur{
+        border: 1px solid $fb3;
+        color: $fb3;
+    }
+    .count-input{
+        width: 66%;
+    }
+  }
+  .ule-btn-group-1{
+      justify-content: flex-start;
+      .ule-btn:nth-of-type(1){
+          margin-right: 20px;
+      }
+  }
+  .footer{
+    .ule-btn{
+        flex: none;
+        width: calc(50% - 10px);
+    }
+
+  }
+
+}

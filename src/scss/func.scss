@@ -1,0 +1,35 @@
+//flex布局  水平垂直居中
+@mixin flex-center($fx:row){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $fx;
+}
+
+@mixin return-all($position:absolute){
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    position: $position;
+    font: {
+        size:18px;
+        weight:bold;
+    }
+}
+@mixin absolute($l:left,$r:top,$lpx:0,$rpx:0){
+    position: absolute;
+    #{$l} : $lpx;
+    #{$r} : $rpx;
+}
+
+@mixin over-hide($line:1){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    display:block;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}

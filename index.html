@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="version" content="<%= process.env.VERSION %>">
+
+    <title>Web App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="//i1.ule.com/ule/event/2017/1101/h5/animate.min.css">
+    <link rel="stylesheet" href="//i1.ule.com/ule/event/2017/1101/h5/animate.min.css">
+</head>
+<body>
+<script type="text/javascript" src="//i1.beta.ulecdn.com/yzgpad/common/js/yzg-pad.js?v=1.1"></script>
+<script src="//i1.ule.com/opc/2018/0408/j/jquery.min.js"></script>
+<script>var winHeight = window.innerHeight|| document.body.clientHeight;   
+    window.onresize=function(){
+        let hideBtn=document.querySelectorAll('.hide_btn')
+        let currenHeight= window.innerHeight|| document.body.clientHeight;  
+        if(hideBtn&&hideBtn.length>0){
+            if(winHeight-currenHeight>50){
+                hideBtn[0].style.display="none"
+            }else{
+                hideBtn[0].style.display="block"
+            }
+        }
+    }
+    </script>
+
+<div id="rootApp"></div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>客服</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+    <script language="javascript" type="text/javascript">
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+            }
+        }
+        NTKF_PARAM = {
+            siteid:theRequest.siteid|| "lw_1000",	   //企业ID，,为固定值
+            settingid:theRequest.settingid|| "lw_1000_9999",  //接待组ID，为固定值，必填
+            uid:theRequest.uid|| "12323",		   //用户ID，未登录可以为空，但是不能给null，uid赋予的值显示到小能客户端
+            uname: theRequest.uname||"eminyli@163.com",   //用户名，未登录可以为空，但是不能给null，uname赋予的值显示到小能客户端
+            isvip:theRequest.isvip|| "0",                 //是否为vip用户，0代表非会员，1代表会员，取值显示到小能客户端
+            userlevel:theRequest.userlevel|| "1",		   //网站自定义会员级别，1-N，可根据选择判断，取值显示到小能客户端
+            erpparam:theRequest.erpparam|| "abc"             //erpparam为erp功能的扩展字段，可选，购买erp功能后用于erp功能集成
+        } 
+    </script>
+    <script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=lw_1000" charset="utf-8"></script>
+    <script>
+        window.onload = () => {
+            NTKF.im_openInPageChat('lw_1000_9999')
+        }
+    </script>
+</body>
+
+</html>

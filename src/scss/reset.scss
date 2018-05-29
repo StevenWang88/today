@@ -1,0 +1,30 @@
+@import "size";
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;padding: 0;
+}
+
+body{
+    font-family: 'Microsoft YaHei',-apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",;
+    *{box-sizing: border-box;border: none;outline: none;}
+    font-size: $baseSize;
+    color: #333;
+    .number{
+        font-family: 'Arial';
+    }
+}
+input{
+    outline: none;
+    &::-webkit-input-placeholder{text-align: left;color: #bbb;}
+}
+ .animated {
+    animation-duration:0.2s !important;
+}
+.fadeIn{
+    animation-duration:1s !important;
+}
+.rc-scroll{
+    // transition: all 0.3s;
+}

@@ -1,0 +1,139 @@
+@import "../../scss/color";
+@import "../../scss/func";
+@import "../../scss/size";
+
+
+.rect-fff{
+	background: $fff;
+	border-radius: 4px;
+	.row{
+		height: 64px;
+		border-bottom: 1px solid $e3;
+		display: flex;
+		align-items: center;
+		&:last-child{border-bottom: none;}
+	}
+}
+//订单商品信息
+.order-goods{
+	.title{border-bottom: 1px solid $e3;
+		color: $bb;
+	}
+	.row{
+		padding: 0 20px;
+	}
+	.row-1{
+		flex: 1;
+		display: flex;
+	}
+	.row-right{
+		justify-content: flex-end;
+		.returnCheck{
+			width: 66px;
+			background: rgb(238, 213, 74);
+			border-radius: 15px;
+		}
+	}
+	.list{
+		max-height: 340px;
+		overflow-y: auto;
+		.name{
+			@include over-hide();
+		}
+	}
+	.row-100{
+		width: 100px;
+		text-align: center;
+		.return-box{
+			height: 28px;
+			line-height: 28px;
+			width: 96px;
+			position: relative;
+			color: #202020;
+			.left{
+				@include flex-center();
+				@include return-all();
+				background: #FFE2E2;
+				left: 0px;
+				bottom: 0px;
+			}
+			.right{
+				@include flex-center();
+				@include return-all();
+				background: #FB3030;
+				right: 0px;
+				bottom: 0px;
+			}
+		}
+	}
+}
+.order-info-table{
+	.price{
+		color: red;
+	}
+	.return-btn{
+		margin-top: 30px;
+	   div{
+    	display: inline-block;
+		text-align: center;
+		border-radius: 5px;
+		padding: 15px 20px;;
+		width: 48%;
+		background-color: #e3e3e3;
+		font-size: 16px;
+		font-weight: bold;
+	   }
+	   .return-confirm{
+		background-color: #FB3030;
+		color: #fff;
+		margin-left: 4%;
+	   }
+	   .unbtn{
+		background-color: #666;
+	   }
+	}
+}
+.order-info-tr{
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	padding: 15px;
+	background: #F8F8F8;
+	text-align: center;
+	div{
+		width: 100px;
+	}
+   .ellipsis{
+	@include over-hide();
+	   
+   }	
+}
+.order-tb-head{
+	background: #f1f1f1;
+	font-weight: bold;
+}
+
+  .order-info-modal{
+	  background: rgba($color: #000000, $alpha:0.3);
+	  font-size: 14px;
+	.ant-modal{
+		top: auto;
+        width: auto !important;
+	}
+	.one-check{
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		font-size: 14px;
+		margin:10px 20px;
+		.check-g{
+			display: flex;
+			align-items: center;
+			margin-left:10px; 
+		}
+		.sz-input{
+			border: 1px solid #eee;
+			width: 50px;
+		}
+	}
+}
